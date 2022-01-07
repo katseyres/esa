@@ -1,0 +1,36 @@
+PROGRAMME
+
+mots <- LISTE de CHAINE DE CARACTERES
+lettre <- CARACTERE
+lettres, mot, motCaché <- CHAINE DE CARACTERES
+vies <- ENTIER
+
+DÉBUT
+    TANT QUE (vies > 0) FAIRE
+        LIRE(lettre)
+        SI (lettre N'EST PAS DANS lettres) ALORS
+            ECRIRE("Déjà proposée")
+        SINON
+            SI (lettre N'EST PAS DANS mot) ALORS
+                SUPPRIMER lettre de lettres
+                vies <- vies -1
+            SINON
+                POUR clé, valeur dans word
+                    SI valeur == lettre ALORS
+                        Remplacer "*" par la lettre correspondante
+                    FIN
+                FIN
+
+                SUPPRIMER lettre DE lettres
+
+                SI (motCaché NE CONTIENT AUCUN "*") ALORS
+                    ECRIRE("Vous avez trouvé le mot")
+                    
+                    RETOURNE Vrai
+                FIN
+            FIN
+        FIN
+    FIN
+
+    RETOURNE Faux
+FIN

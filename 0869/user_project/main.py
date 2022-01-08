@@ -21,13 +21,9 @@ def checkName(firstName:str, lastName:str) -> bool:
 
     return firstNameChecked and lastNameChecked
 
-print(checkName("Maximilien", "Denis"))
-
 def checkPostCode(postCode:int) -> bool:
     """Check if the post code contains exaclty 4 digits."""
     return (type(postCode) == int and len(str(postCode)) == 4)
-
-print(checkPostCode(2333))
 
 def checkEmail(email:str) -> bool:
     """Check if the email matches with the pattern xxx@xxx.xx."""
@@ -37,14 +33,10 @@ def checkEmail(email:str) -> bool:
 
     return output is not None
 
-print(checkEmail("eee@zzz.zz"))
-
 def checkUsername(username:str) -> bool:
     """Check if the username only contains lowercase alpha or digits."""
     pattern = r"^[a-z0-9]+$"
     return re.match(pattern, username) is not None, re.match(pattern, username).group()
-
-print(checkUsername("eeduzfiu1"))
 
 def checkPassword(password:str) -> bool:
     """Check if the password contains at least
@@ -81,4 +73,9 @@ def checkPassword(password:str) -> bool:
 
     return True
 
+
+print(checkName("Maximilien", "Denis"))
+print(checkPostCode(2333))
+print(checkEmail("eee@zzz.zz"))
+print(checkUsername("eeduzfiu1"))
 print(checkPassword("ozeEi8cb_rfy"))

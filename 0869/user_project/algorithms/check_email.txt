@@ -16,9 +16,9 @@ DEBUT
 
     TANT QUE index < longueur(email) FAIRE
         SI (index = 3) OU (index = 7) OU (chars CONTIENT email[index]) ALORS
-            CONTINUE
+            index <- index + 1
         SINON
-            RETOURNE Vrai
+            RETOURNE Faux
         FIN
     FIN
 

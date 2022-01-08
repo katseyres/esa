@@ -2,25 +2,31 @@ PROGRAMME verificationNomEtPrenom
 
 chars, prenom, nom : CHAINE
 prenomVerifie, nomVerifie : BOOLEEN
+index : ENTIER
 
 DEBUT
     LIRE(prenom, nom)
     chars <- "abc(...)xyzABC(...)XYZ0123(...)789"
     prenomVerifie, nomVerifie <- Vrai
+    index <- 0
 
-    POUR lettre DANS prenom FAIRE
-        SI lettre PAS DANS chars ALORS
-            prenomVerifie <- Faux
-            BREAK
+    TANT QUE index < longueur(prenom) ALORS
+        SI prenom[index] DANS chars ALORS
+            index <- index + 1
+        SINON
+            RETOURNE Faux
         FIN
     FIN
 
-    POUR lettre DANS nom FAIRE
-        SI lettre PAS DANS chars ALORS
-            nomVerifie <- Faux
-            BREAK
+    index <- 0
+
+    TANT QUE index < longueur(nom) ALORS
+        SI nom[index] DANS chars ALORS
+            index <- index + 1
+        SINON
+            RETOURNE Faux
         FIN
     FIN
 
-    RETOURNE (prenomVerifie == Vrai ET nomVerifie == Vrai)
+    RETOURNE Vrai
 FIN

@@ -1,23 +1,23 @@
 PROGRAMME verificationNomEtPrenom
 
-chars, prenom, nom <- CHAINE
-prenomVerifie, nomVerifie <- BOOLEEN
+chars, prenom, nom : CHAINE
+prenomVerifie, nomVerifie : BOOLEEN
 
 DEBUT
     LIRE(prenom, nom)
-    chars = "abc(...)xyzABC(...)XYZ0123(...)789"
-    prenomVerifie, nomVerifie = Vrai
+    chars <- "abc(...)xyzABC(...)XYZ0123(...)789"
+    prenomVerifie, nomVerifie <- Vrai
 
     POUR lettre DANS prenom FAIRE
         SI lettre PAS DANS chars ALORS
-            prenomVerifie = Faux
+            prenomVerifie <- Faux
             BREAK
         FIN
     FIN
 
     POUR lettre DANS nom FAIRE
         SI lettre PAS DANS chars ALORS
-            nomVerifie = Faux
+            nomVerifie <- Faux
             BREAK
         FIN
     FIN

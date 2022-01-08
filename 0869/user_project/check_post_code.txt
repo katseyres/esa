@@ -1,0 +1,14 @@
+PROGRAMME verificationCodePostal
+
+codePostal : ENTIER
+
+DEBUT
+    LIRE(codePostal)
+
+    SI codePostal N'EST PAS ENTIER ALORS
+        RETOURNE Faux
+    SINON SI longueur(codePostal) != 4 ALORS
+        RETOURNE Faux
+    
+    RETOURNE Vrai
+FIN

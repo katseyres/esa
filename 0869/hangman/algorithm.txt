@@ -1,9 +1,9 @@
 PROGRAMME pendu
 
-mots <- LISTE de CHAINE DE CARACTERES
-lettre <- CARACTERE
-lettres, mot, motCaché <- CHAINE DE CARACTERES
-vies <- ENTIER
+mots : LISTE de CHAINE DE CARACTERES
+lettre : CARACTERE
+lettres, mot, motCaché : CHAINE DE CARACTERES
+vies : ENTIER
 
 DÉBUT
     TANT QUE (vies > 0) FAIRE

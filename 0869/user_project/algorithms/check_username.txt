@@ -1,13 +1,18 @@
 PROGRAMME verificationIdentifiant
 
-identifiant, format : CHAINE
+identifiant : CHAINE
+format : CHAINE
+index : ENTIER
 
 DEBUT
     LIRE(identifiant)
     format <- "abc(...)xyz012(...)789"
+    index <- 0
 
-    POUR lettre DANS identifiant FAIRE
-        SI format NE CONTIENT PAS lettre ALORS
+    TANT QUE index < longueur(identifiant) FAIRE
+        SI identifiant[index] DANS format ALORS
+            index <- index + 1
+        SINON
             RETOURNE Faux
         FIN
     FIN

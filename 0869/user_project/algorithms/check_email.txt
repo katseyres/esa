@@ -1,19 +1,24 @@
 PROGRAMME verificationEmail
 
 email, format, chars : CHAINE
+index : ENTIER
 
 DEBUT
     LIRE(email)
+
     format <- "xxx@xxx.xx"
     chars <- "abc(...)xyzABC(...)XYZ012(...)789.-"
+    index <- 0
 
-    SI email[3] != "@" OU email[7] != "." ALORS
+    SI email[3] <> "@" OU email[7] <> "." ALORS
         RETOURNE Faux
     FIN
 
-    POUR lettre DANS email FAIRE
-        SI chars NE CONTIENT PAS lettre ET (index(lettre) != 3 OU index(lettre) != 7)  ALORS
-            RETOURNE Faux
+    TANT QUE index < longueur(email) FAIRE
+        SI (index = 3) OU (index = 7) OU (chars CONTIENT email[index]) ALORS
+            CONTINUE
+        SINON
+            RETOURNE Vrai
         FIN
     FIN
 

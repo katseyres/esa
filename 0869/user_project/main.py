@@ -3,6 +3,8 @@ import re
 from sys import hash_info
 
 def checkName(firstName:str, lastName:str) -> bool:
+    """CHeck if parameters only to contain letters or "-"."""
+
     chars = string.ascii_letters + "-"
 
     firstNameChecked = True
@@ -17,30 +19,40 @@ def checkName(firstName:str, lastName:str) -> bool:
         if chars.__contains__(letter) is False:
             lastNameChecked = False
 
-    return firstNameChecked and lastNameChecked, firstName, lastName
+    return firstNameChecked and lastNameChecked
 
 print(checkName("Maximilien", "Denis"))
 
 def checkPostCode(postCode:int) -> bool:
-    return (type(postCode) == int and len(str(postCode)) == 4), postCode
+    """Check if the post code contains exaclty 4 digits."""
+    return (type(postCode) == int and len(str(postCode)) == 4)
 
 print(checkPostCode(2333))
 
 def checkEmail(email:str) -> bool:
+    """Check if the email matches with the pattern xxx@xxx.xx."""
     pattern = r"^[a-z0-9\.\-]{3}@[a-z0-9\.\-]{3}\.[a-z0-9\.\-]{2}$"
     output = re.match(pattern, email)
+    print('Email match: {0}'.format(output))
 
-    return output is not None, output.group()
+    return output is not None
 
 print(checkEmail("eee@zzz.zz"))
 
 def checkUsername(username:str) -> bool:
+    """Check if the username only contains lowercase alpha or digits."""
     pattern = r"^[a-z0-9]+$"
     return re.match(pattern, username) is not None, re.match(pattern, username).group()
 
 print(checkUsername("eeduzfiu1"))
 
 def checkPassword(password:str) -> bool:
+    """Check if the password contains at least
+        - One lowercase alpha.
+        - One uppercase alpha.
+        - One digit.
+        - One special character.  
+    """
     alphaLowerPattern = r"[a-z]"
     alphaUpperPattern = r"[A-Z]"
     digitPattern = r"[0-9]"
@@ -50,18 +62,23 @@ def checkPassword(password:str) -> bool:
     hasAlphaUpper = re.search(alphaUpperPattern, password)
     hasDigit =  re.search(digitPattern, password)
     hasSpecialChar =  re.search(specialCharPattern, password)
+
+    print(hasAlphaLower)
+    print(hasAlphaUpper)
+    print(hasDigit)
+    print(hasSpecialChar)
     
     if (len(password) < 10):
         return False
-    elif (re.search(alphaLowerPattern, password) is None):
+    elif (hasAlphaUpper is None):
         return False
-    elif (re.search(alphaUpperPattern, password) is None):
+    elif (hasAlphaUpper is None):
         return False
-    elif (re.search(digitPattern, password) is None):
+    elif (hasDigit is None):
         return False
-    elif (re.search(specialCharPattern, password) is None):
+    elif (hasSpecialChar is None):
         return False
 
-    return True, (hasAlphaLower.group(), hasAlphaUpper.group(), hasDigit.group(), hasSpecialChar.group())
+    return True
 
 print(checkPassword("ozeEi8cb_rfy"))

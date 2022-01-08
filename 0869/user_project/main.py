@@ -36,7 +36,7 @@ def checkEmail(email:str) -> bool:
 def checkUsername(username:str) -> bool:
     """Check if the username only contains lowercase alpha or digits."""
     pattern = r"^[a-z0-9]+$"
-    return re.match(pattern, username) is not None, re.match(pattern, username).group()
+    return re.match(pattern, username) is not None
 
 def checkPassword(password:str) -> bool:
     """Check if the password contains at least

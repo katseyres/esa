@@ -1,11 +1,19 @@
 PROGRAMME pendu
 
-mots : LISTE de CHAINE DE CARACTERES
-lettre : CARACTERE
-lettres, mot, motCaché : CHAINE DE CARACTERES
+lettres : CHAINE
 vies : ENTIER
+mots : LISTE CHAINE
+mot : CHAINE 
+motCache : CHAINE
+lettre : CARACTERE
 
 DÉBUT
+    lettres <- "abc(...)xyz"
+    vies <- 20
+    mots <- [...] # Liste de mots proposes
+    mot <- random(mots)
+    motsCache <- "*" * longueur(mot)
+
     TANT QUE (vies > 0) FAIRE
         LIRE(lettre)
         SI (lettre N'EST PAS DANS lettres) ALORS
@@ -16,7 +24,7 @@ DÉBUT
                 vies <- vies -1
             SINON
                 POUR clé, valeur dans word
-                    SI valeur == lettre ALORS
+                    SI valeur = lettre ALORS
                         Remplacer "*" par la lettre correspondante
                     FIN
                 FIN

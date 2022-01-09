@@ -6,6 +6,8 @@ mots : LISTE CHAINE
 mot : CHAINE 
 motCache : CHAINE
 lettre : CARACTERE
+index : ENTIER
+toutTrouve : BOOLEEN
 
 DÉBUT
     lettres <- "abc(...)xyz"
@@ -13,9 +15,12 @@ DÉBUT
     mots <- [...] # Liste de mots proposes
     mot <- random(mots)
     motsCache <- "*" * longueur(mot)
+    toutTrouve <- Faux
 
     TANT QUE (vies > 0) FAIRE
+        index <- 0
         LIRE(lettre)
+
         SI (lettre N'EST PAS DANS lettres) ALORS
             ECRIRE("Déjà proposée")
         SINON
@@ -23,17 +28,25 @@ DÉBUT
                 SUPPRIMER lettre de lettres
                 vies <- vies -1
             SINON
-                POUR clé, valeur dans word
-                    SI valeur = lettre ALORS
-                        Remplacer "*" par la lettre correspondante
+                TANT QUE index < longueur(mot) FAIRE
+                    SI mot[index] = lettre ALORS
+                        motCache[index] = lettre
                     FIN
+
+                    index <- index + 1
                 FIN
 
-                SUPPRIMER lettre DE lettres
+                index <- 0
 
-                SI (motCaché NE CONTIENT AUCUN "*") ALORS
+                TANT QUE index < longueur(motCache) FAIRE
+                    SI motCache[index] <> "*" ALORS
+                        toutTrouve <- Vrai
+
+                    index <- index + 1
+                FIN
+
+                SI toutTrouve = Vrai ALORS
                     ECRIRE("Vous avez trouvé le mot")
-                    
                     RETOURNE Vrai
                 FIN
             FIN

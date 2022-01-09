@@ -8,6 +8,10 @@ DEBUT
     chars <- "abc(...)xyzABC(...)XYZ0123(...)789"
     index <- 0
 
+    SI prenom = nom ALORS
+        RETOURNE Faux
+    FIN
+
     TANT QUE index < longueur(prenom) ALORS
         SI prenom[index] DANS chars ALORS
             index <- index + 1

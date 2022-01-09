@@ -59,18 +59,17 @@ def checkUsername(username:str) -> bool:
 def checkName(firstName:str, lastName:str) -> bool:
     """Firstname and lastname must contain only letters or "-"."""
 
-    chars = string.ascii_letters + "-"
+    if firstName == lastName:
+        return False
 
-    firstNameChecked = True
-    lastNameChecked = True
+    chars = string.ascii_letters + "-"
         
     for letter in firstName:
         if chars.__contains__(letter) is False:
-            firstNameChecked = False
-            break
+            return False
 
     for letter in lastName:
         if chars.__contains__(letter) is False:
-            lastNameChecked = False
-
-    return firstNameChecked and lastNameChecked
+            return False
+    
+    return True

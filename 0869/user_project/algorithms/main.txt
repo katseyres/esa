@@ -64,17 +64,17 @@ DEBUT
         LIRE(motDePasse)
         LIRE(email)
         LIRE(codePostal)
-
         LIRE(deuxiemeIdentifiant)
-        TANT QUE deuxiemeIdentifiant = identifiant FAIRE
-            ECRIRE("Identifiant deja utilise, choisir un autre identifiant: ")
-            LIRE(deuxiemeIdentifiant)
-        FIN
-
+        
         donneesCorrectes <- Faux
 
         TANT QUE donneesCorrectes = Faux FAIRE
             donneesCorrectes <- Vrai
+
+            TANT QUE deuxiemeIdentifiant = identifiant FAIRE
+                ECRIRE("Identifiant deja utilise, choisir un autre identifiant: ")
+                LIRE(deuxiemeIdentifiant)
+            FIN
 
             SI (verifieNom(prenom, nom) = Faux)
                 ECRIRE("Le nom et le prenom ne doivent contenir que des lettres ou le symbole '-', entrez autre chose: ")
@@ -105,5 +105,9 @@ DEBUT
         ECRIRE("*" * longueur(motDePasse))
         ECRIRE(email)
         ECRIRE(codePostal)
+
+        ECRIRE("2 utilisateurs encode.")
+    SINON
+        ECRIRE("1 utilisateur encode.)
     FIN
 FIN

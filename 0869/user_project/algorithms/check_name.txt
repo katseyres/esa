@@ -1,13 +1,11 @@
 PROGRAMME verificationNomEtPrenom
 
 chars, prenom, nom : CHAINE
-prenomVerifie, nomVerifie : BOOLEEN
 index : ENTIER
 
 DEBUT
     LIRE(prenom, nom)
     chars <- "abc(...)xyzABC(...)XYZ0123(...)789"
-    prenomVerifie, nomVerifie <- Vrai
     index <- 0
 
     TANT QUE index < longueur(prenom) ALORS

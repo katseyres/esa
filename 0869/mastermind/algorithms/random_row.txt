@@ -1,0 +1,20 @@
+PROGRAMME ligneAleatoire
+
+index : ENTIER
+couleurs : CHAINE
+tailleLigne : ENTIER
+ligneAleatoire : CHAINE
+
+DEBUT
+    index <- 0
+    couleurs <- "ABCDEGMOPRWY"
+    ligneAleatoire <- ""
+
+    LIRE(tailleLigne)
+
+    TANT index < tailleLigne FAIRE
+        ligneAleatoire <- ligneAleatoire + random(couleurs)
+    FIN
+
+    RETOURNE ligneAleatoire
+FIN

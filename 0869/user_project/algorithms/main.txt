@@ -1,0 +1,109 @@
+PROGRAMME projetUtilisateur
+
+prenom : CHAINE
+nom : CHAINE
+identifiant : CHAINE
+deuxiemeIdentifiant : CHAINE
+motDePasse : CHAINE
+email : CHAINE
+
+codePostal : ENTIER
+
+donneesCorrectes : BOOLEEN
+nouvelUtilisateur : BOOLEEN
+
+DEBUT
+    donneesCorrectes <- Faux
+
+    LIRE(prenom)
+    LIRE(nom)
+    LIRE(identifiant)
+    LIRE(motDePasse)
+    LIRE(email)
+    LIRE(codePostal)
+
+    TANT QUE donneesCorrectes = Faux FAIRE
+        donneesCorrectes <- Vrai
+
+        SI (verifieNom(prenom, nom) = Faux)
+            ECRIRE("Le nom et le prenom ne doivent contenir que des lettres ou le symbole '-', entrez autre chose: ")
+            LIRE(prenom, nom)
+            donneesCorrectes <- Faux
+        SINON SI verifieIdentifiant(identifiant) = Faux
+            ECRIRE("L'identifiant doit uniquement contenir des lettres en minuscule ou des chiffres, entrez autre chose: ")
+            LIRE(prenom, nom)
+            donneesCorrectes <- Faux
+        SINON SI verifieMotDePasse(motDePasse) = Faux
+            ECRIRE("Le mot de passe doit au moins avoir 10 caractères, contenir 1 lettre minuscule, 1 lettre majuscule, un chiffre et un caractère spécial, entrez autre chose: ")
+            LIRE(prenom, nom)
+            donneesCorrectes <- Faux
+        SINON SI verifieCodePostal(codePostal) = Faux
+            ECRIRE("Le code postal doit contenir exactement 4 chiffres, entrez autre chose: ")
+            LIRE(prenom, nom)
+        SINON SI verifieEmail(email) = Faux
+            ECRIRE("L'email doit correspondre au format xxx@xxx.xx et ne contenir uniquement des lettres minuscules, des chiffres ou les caractère '.' ou '-', entrez autre chose: ")
+            LIRE(prenom, nom)
+            donneesCorrectes <- Faux
+        FIN
+    FIN
+
+    ECRIRE("INFORMATION UTILISATEUR")
+    ECRIRE(prenom)
+    ECRIRE(nom)
+    ECRIRE(identifiant)
+    ECRIRE("*" * longueur(motDePasse))
+    ECRIRE(email)
+    ECRIRE(codePostal)
+
+    ECRIRE("AJouter un autre utilisateur ? (Vrai/Faux) ")
+    LIRE(nouvelUtilisateur)
+
+    SI nouvelUtilisateur = Vrai ALORS
+        LIRE(prenom)
+        LIRE(nom)
+        LIRE(motDePasse)
+        LIRE(email)
+        LIRE(codePostal)
+
+        LIRE(deuxiemeIdentifiant)
+        TANT QUE deuxiemeIdentifiant = identifiant FAIRE
+            ECRIRE("Identifiant deja utilise, choisir un autre identifiant: ")
+            LIRE(deuxiemeIdentifiant)
+        FIN
+
+        donneesCorrectes <- Faux
+
+        TANT QUE donneesCorrectes = Faux FAIRE
+            donneesCorrectes <- Vrai
+
+            SI (verifieNom(prenom, nom) = Faux)
+                ECRIRE("Le nom et le prenom ne doivent contenir que des lettres ou le symbole '-', entrez autre chose: ")
+                LIRE(prenom, nom)
+                donneesCorrectes <- Faux
+            SINON SI verifieIdentifiant(identifiant) = Faux
+                ECRIRE("L'identifiant doit uniquement contenir des lettres en minuscule ou des chiffres, entrez autre chose: ")
+                LIRE(prenom, nom)
+                donneesCorrectes <- Faux
+            SINON SI verifieMotDePasse(motDePasse) = Faux
+                ECRIRE("Le mot de passe doit au moins avoir 10 caractères, contenir 1 lettre minuscule, 1 lettre majuscule, un chiffre et un caractère spécial, entrez autre chose: ")
+                LIRE(prenom, nom)
+                donneesCorrectes <- Faux
+            SINON SI verifieCodePostal(codePostal) = Faux
+                ECRIRE("Le code postal doit contenir exactement 4 chiffres, entrez autre chose: ")
+                LIRE(prenom, nom)
+            SINON SI verifieEmail(email) = Faux
+                ECRIRE("L'email doit correspondre au format xxx@xxx.xx et ne contenir uniquement des lettres minuscules, des chiffres ou les caractère '.' ou '-', entrez autre chose: ")
+                LIRE(prenom, nom)
+                donneesCorrectes <- Faux
+            FIN
+        FIN
+
+        ECRIRE("INFORMATION DEUXIEME UTILISATEUR")
+        ECRIRE(prenom)
+        ECRIRE(nom)
+        ECRIRE(deuxiemeIdentifiant)
+        ECRIRE("*" * longueur(motDePasse))
+        ECRIRE(email)
+        ECRIRE(codePostal)
+    FIN
+FIN

@@ -1,0 +1,8 @@
+FONCTION inversion_cles_valeurs(dico_cles_valeurs : DICTIONNAIRE)
+    sortie : DICTIONNAIRE
+    
+    POUR cle DE dico_cles_valeurs FAIRE
+        sortie[dico_cles_valeurs[cle]] = cle
+    
+    RETOURNE sortie
+FIN

@@ -1,0 +1,17 @@
+PROGRAMME trouveElement
+
+tab : TABLEAU[1..N] D'ENTIERS
+x : ENTIER
+element : ENTIER
+
+DEBUT
+    LIRE(x)
+
+    POUR element DE 1 A N FAIRE
+        SI element = x ALORS
+            RETOURNE Vrai
+        FIN
+    FIN
+
+    RETOURNE Faux
+FIN

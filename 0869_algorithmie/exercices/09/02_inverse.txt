@@ -1,0 +1,19 @@
+FONCTION inverse
+
+N : ENTIER
+index : ENTIER
+temporaire : ENTIER
+
+tableau : TABLEAU[1..N] D'ENTIERS
+
+DEBUT
+    N <- 10
+
+    POUR index ALLANT DE 1 A (N DIV 2) FAIRE
+        temporaire <- tableau[index]
+        tableau[index] <- tableau[N - index]
+        tableau[N - index] <- temporaire
+    FIN
+
+    RETOURNE tableau
+FIN

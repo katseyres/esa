@@ -1,0 +1,42 @@
+PROGRAMME sommeLigneEtColonne
+
+N : ENTIER
+M : ENTIER
+i,j : ENTIER
+somme : ENTIER
+
+tableau : tableau[1..N, 1..M] D'ENTIERS
+
+/*
+                   (M) 
+       J1 J2 J3 J4 J5
+    I1 .  .  .  .  .
+    I2 .  .  .  .  .
+    I3 .  .  .  .  .
+(N) I4 .  .  .  .  .
+
+*/
+
+DEBUT
+    /* Calcul de toutes les lignes. */
+    POUR i DE 1 A N FAIRE
+        somme <- 0
+
+        POUR j DE 1 A M FAIRE
+            somme <- somme + tableau[i,j]
+        FIN
+
+        ECRIRE(somme)
+    FIN
+
+    /* Calcul de toutes les colonnes. */
+    POUR j DE 1 A M FAIRE
+        somme <- 0
+
+        POUR i DE 1 A N FAIRE
+            somme <- somme + tableau[i,j]
+        FIN
+
+        ECRIRE(somme)
+    FIN
+FIN

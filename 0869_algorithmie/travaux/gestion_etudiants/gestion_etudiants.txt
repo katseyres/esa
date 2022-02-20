@@ -1,0 +1,116 @@
+PROGRAMME gestion_etudiant
+
+dico_etudiant : LISTE DE MAP
+champs : LISTE DE CHAINE DE CARACTERES
+auto_increment_id : ENTIER
+choix : ENTIER
+etudiant : MAP
+index : ENTIER
+etudiant_trouve : BOOLEEN
+
+DEBUT
+    dico_etudiant <- [
+        {
+            "id": 998,
+            "firstname": "Max",
+            "lastname": "Denis",
+            "age": "23"
+        },
+        {
+            "id": 999,
+            "firstname": "Jane",
+            "lastname": "Pitite",
+            "age": "12"
+        }
+    ]
+
+    fields <- ["firsname", "lastname", "age"]
+    auto_increment_id <- 10000
+
+    TANT QUE Vrai
+        ECRIRE("Menu")
+        ECRIRE("1. Montrer la liste d'etudiants")
+        ECRIRE("2. Ajouter un etudiant")
+        ECRIRE("3. Supprimer un etudiant")
+        ECRIRE("4. Mettre a jour un etudiant")
+        ECRIRE("5. Ajouter un champ")
+        ECRIRE("6. Retirer un champ")
+        ECRIRE("7. Quitter le programme")
+        
+        # Le choix doit etre un chiffre compris entre 1 et 7.
+        choix <- LIRE("Choix : ")
+
+        SI choix = 1 ALORS
+            SI longueur(dico_etudiant) = 0 ALORS
+                ECRIRE("Aucun etudiant")
+            SINON
+                POUR etudiant DANS dico_etudiant FAIRE
+                    # Montrer toutes les informations sur l'etudiant.
+                FIN
+            FIN
+        SINON SI choix = 2 ALORS
+            etudiant <- { "id": auto_increment_id }
+            
+            POUR champ DANS champs FAIRE
+                ECRIRE(champ)
+                etudiant[champ] <- LIRE()
+            FIN
+        SINON SI choix = 3 ALORS
+            ECRIRE("Supprimer quel etudiant (identifiant) : ")
+            LIRE(choix)
+
+            index <- -1
+
+            POUR etudiant DANS dico_etudiant FAIRE
+                SI etudiant["id"] = choix ALORS
+                    index <- choix
+                FIN
+            FIN
+
+            SI index = -1 ALORS
+                ECRIRE("Aucun etudiant avec cet identifiant")
+            SINON
+                # Retirer l'etudiant de la liste.
+            FIN
+        SINON SI choix = 4 ALORS
+            etudiant_trouve <- Faux
+            etudiant <- {}
+
+            ECRIRE("Editer quel etudiant (identifiant) : ")
+            LIRE(choix)
+
+            POUR e DANS dico_etudiant FAIRE
+                SI e["id"] = choix ALORS
+                    etudiant_trouve <- Vrai
+                    etudiant <- etudiant["id"]
+                FIN
+            FIN
+
+            SI etudiant_trouve = Faux ALORS
+                ECRIRE("Aucun etudiant avec cet identifiant.")
+            SINON
+                POUR champ DANS champs FAIRE
+                    ECRIRE(champ)
+                    LIRE(etudiant[champ])
+                FIN
+            FIN
+        SINON SI choix = 5 ALORS
+            ECRIRE("Entrer le nouveau champ.")
+            LIRE(choix)
+            
+            # Ajouter <choix> dans la liste <champs>.
+
+        SINON SI choix = 6 ALORS
+            ECRIRE("Entrer le nom du champ à retirer.")
+            LIRE(choix)
+
+            # Retirer <choix> de la liste <champs>. 
+
+        SINON SI choix = 7 ALORS
+            ECRIRE("Fin du programme")
+            BREAK
+        SINON
+            ECRIRE("Le choix doit etre un chiffre compris entre 1 et 7.")
+        FIN
+    FIN
+FIN

@@ -1,0 +1,27 @@
+FONCTION RechercheDichotomique
+
+/* pre : on a un tableau "t" trié de taille N (indice allant de "indice_debut" à "indice_fin" portant sur un tableau ouvert,
+         les indices seront donc décalés d'une unité) et un élément X du même type de tableau à chercher */
+/* post : on retourne la position POS de l'élément s'il est trouvé, sinon on retourne -1 */
+
+indice_milieu : ENTIER
+
+DEBUT
+    POS <- -1
+
+    TANT QUE (indice_debut <= indice_fin) ET (POS < 0) FAIRE
+        indice_milieu <- (indice_debut + indice_fin) DIV 2
+
+        SI tab[indice_milieu] < X ALORS
+            indice_debut <- indice_milieu + 1
+        SINON
+            SI tab[indice_milieu] > X ALORS
+                indice_fin <- indice_milieu - 1
+            SINON
+                POS <- indice_milieu
+            FIN
+        FIN
+    FIN
+
+    RechercheDichotomique <- POS
+FIN

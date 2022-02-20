@@ -1,0 +1,17 @@
+PROCEDURE RechercheEltXInTab
+
+/* pre : on a un tableau t non trié de taille N et un élément X du même typedu tableau à chercher */
+/* post : on retourne la position POS de l'élément s'il est trouvé, sinon on retourne -1 */
+
+DEBUT
+  POS <- -1
+    
+  POUR index <- 1 JUSQU'A N FAIRE
+    SI tab[index] = x ALORS
+      BEGIN
+        POS = index
+        BREAK /* On a trouvé l'élément, on sort de la boucle. */
+      END
+    FIN
+  FIN
+FIN

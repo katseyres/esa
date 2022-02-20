@@ -1,6 +1,6 @@
 import random
 
-LIFES = 20
+LIFES = 10
 COLORS = {
     "A": "azure",
     "B": "brown",

@@ -1,0 +1,17 @@
+# Bash
+
+"Bourne-Again SHell" (Stephen Bourne étant l'auteur de son ancêtre : sh).
+Conforme à IEEEE POSIX Shell
+Un shell est un macro-processeur (remplacement de texte) qui exécute des commandes.
+
+Quelques fonctions de Bash :
+  - Interpéteur de commandes
+  - Langage de programmation : variables, fonctions, boucles, conditions,...
+  - Utilisation interactive ou non (commandes exécutées depuis un fichier : script)
+  - Exécution de commandes synchrones ou asynchrones (exécutions parallèles)
+  - Petit ensemble de commandes "builtin" (cd, history, pwd,...)
+  - Contrôle des jobs
+  - Édition de la ligne de commandes
+  - Historique des commandes
+  - Alias
+

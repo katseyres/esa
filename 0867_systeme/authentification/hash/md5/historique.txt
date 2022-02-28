@@ -1,0 +1,15 @@
+# Historique du MD5
+
+MD5 a été conçu en 1991.
+
+Dès 1996, il est considéré comme non sécurisé du fait des collisions possibles. Cela implique
+la possibilité d'atteindre la même empreinte au départ d'un autre message. Or il était encore
+utilisé sur des installations critiques en 2008 (certaines autorités de certifications)...
+
+Utilisations d'une fonction de hashing
+  - Attester la validité d'un mot de passe
+  - Vérifier l'intégrité d'un fichier téléchargé
+  - Identification par les antivirus de fichiers infectés
+  - Signer un certificat SSL
+  - En somme pour tout usage où on cherche une "signature"
+

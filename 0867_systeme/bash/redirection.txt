@@ -1,0 +1,35 @@
+# Redirection
+
+Le flux "classique" d'un processus est :
+  - /dev/stdin  = entrée standard (par défaut le clavier).
+  - /dev/stdout = sortie standard (par défaut l'écran).
+  - /dev/stderr = sortie d'erreur standard (par défaut l'écran).
+
+# Exemples
+
+Il est possible de détourner le flux traditionnel :
+  - Modifier la sortie standard via 1> ou > (écrasement) ou >> (concaténation).
+  - Modifier la sortie d'erreur standard via 2> (écrasement) ou 2>> (concaténation).
+  N.B. On peut éviter de dupliquer des destinations via 2>&1 ou 1>&2 ou &>.
+  - Modifier l'entrée standard depuis le fichier via <.
+  - Modifier l'entrée standard depuis le clavier via -.
+  - Orienter l'entrée standard vers ce qui est tapé au clavier via << TERMINAISON.
+
+Un mécanisme de communication entre processus est possible :
+  - Chaîner différentes commandes entre elles via | (tuyau ou "pipe").
+  - Composer une entrée standard avec le résultat d'une commande via <( ).
+  - Dédoubler un même flux de sortie vers deux destinations via tee.
+
+# Liste de commandes
+On peut lister différentes commandes sur une même ligne.
+
+Le choix de l'opérateur peut influencer l'exécution des commandes
+  - cmd1 ; cmd2 exécutera cmd1 puis cmd2.
+  - cmd1 && cmd2 exécutera cmd2 seulement si cmd1 s'est bien terminé (code de sortie = 0).
+  - cmd1 || cmd2 exécutera cmd2 seulement si cmd1 s'est mal terminé (code de sortie >= 1).
+
+Les opérateurs && et || s'appuient sur le statut de sortie de cmd1 (cf. la variable $?).
+
+# Plus d'informations
+man bash
+man glob

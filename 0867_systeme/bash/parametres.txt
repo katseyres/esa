@@ -1,0 +1,30 @@
+# Paramètres
+
+Un paramètre est une entité qui stocke une valeur.
+Une variable est un paramètre portant un nom.
+Une variable contient une valeur (qui peut être une chaîne de caractères vide).
+Une variable possède 0 à plusieurs attributs (ex: un entier).
+
+Pour consulter une variable, on fait précéder son nom du dollar: $VAR ou ${VAR}
+
+# Exemple en ligne de code
+
+LANGUE=Français
+echo $LANGUE
+
+LANGUE=
+echo $LANGUE
+
+unset LANGUE
+declare -i NOMBRE=5
+echo $NOMBRE
+
+NOMBRE=hello
+echo $NOMBRE
+
+declare +i NOMBRE
+NOMBRE=toto
+echo $NOMBRE
+
+NOMBRE="zéro absolu"
+echo $NOMBRE

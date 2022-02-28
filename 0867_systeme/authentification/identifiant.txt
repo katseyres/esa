@@ -1,0 +1,7 @@
+# IDentifiant
+Chaque identifiant (ID) est unique.
+L'ID interne à l'OS n'est pas le login (mais bien une chaîne de binaire ou un entier).
+Le login n'est qu'une interface humaine vers l'ID.
+L'OS utilise l'ID pour accorder ou non les accès aux ressources.
+Problème potentiel en cas de dissociation.
+On peut rassembler des utilisateurs dans des groupes (facilité de gestion).

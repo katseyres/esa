@@ -1,0 +1,39 @@
+# Expansion
+
+Il existe plusieurs types d'expansion réalisés dans un ordre déterminé :
+  1. Brace (accolades): { } (virgule comme séparateur, .. pour une séquence).
+  2. Tilde: ~ = $HOME, ~+ = $PWD, ~- = $OLDPWD. 
+  3. Paramètres/variables (des manipulations sont possibles, ex. substring ${VAR:4:3}.
+  4. Arithmétique: $((2+6)) voir aussi - (sub), * (mult), / (div), ** (exp), % (mod).
+  5. Substitution de commande: echo Date: $(date) VS echo Date: date
+  6. Séparation des mots: sur base de la variable $IFS.
+  7. Nom de fichier: symboles *, ?, [ (notions de joker, wildcard, globbing,...).
+
+Une fois toutes les expansions réalisées, on supprime toutes les occurences non "quotées"
+des symboles de quoting (\, ", ') qui ne résulteraient pas des opérations d'expansion.
+
+L'expansion de l'historique (symbole !) est réalisée lors d'une autre phase juste après 
+la lecture de la ligne (après l'étape n°1 de la séquence de travail de Bash).
+
+# Exemple
+
+*    : n'importe quel nombre de caractères (0 à n).
+       *.txt ; /dev/sd* ; *n*x
+
+?    : 1 et 1 seul caractère (pas 0).
+       juli?n ; /dev/sd? ; *n?x
+
+[ ]  : ensemble des caractères (relation OU), en série ou non (maj., min., chiffres).
+       m[a,o,u]n ; /dev/sd[a-c] ; *n[i,u]x
+
+[! ] : idem, mais à NE PAS considérer (NOT).
+       m[!e,i]m ; /dev/sda[!1] ; *n[!a,e,o,y]x
+
+{ }  : comporte des caractère ou wild cards. Vise tout ce qui correspond aux combinaisons
+       possibles, en série ou non.
+       cp {*.doc,*.pdf} /home/jd ; rm cours_{15,16}{s,o} ; touch local{1..13..2}
+
+\    : caractère d'échappement. Annule l'effet du caractère spécial suivant.
+       touch question\{1,2}
+ 
+      

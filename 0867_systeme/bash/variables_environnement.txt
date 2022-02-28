@@ -1,0 +1,14 @@
+# Variables du shell ou d'environnement
+
+HOME         : répertoire personnel de l'utilisateur courant (utilisé par l'expansion du tilde).
+IFS          : liste des caractères séparant les champs (cf. expansion).
+PATH         : liste de répertoires (séparés par un double point).
+PS1          : invite de commande primaire.
+PS2          : invite de commmande secondaire.
+HISTFILE     : chemin du fichier conservant l'historique de commandes.
+HISTFILESIZE : nombre maximal d'entrées conservées dans le fichier historique.
+HISTSIZE     : nombre maximal d'entrées conservées dans l'historique.
+SHLVL        : niveau de profondeur des invocations imbriquées.
+PWD          : répertoire courant.
+OLDPWD       : répertoire courant précédent.
+

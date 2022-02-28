@@ -1,1 +1,0 @@
-# UE869 Principes algorithmiques et programmation

@@ -1,0 +1,11 @@
+# Intérêts d'un FS (File System)
+
+Gestion d'un espace de stockage persistant (dépassant l'exécution d'un process en RAM).
+Augmenter la capacité de stockage d'un process (non limité à la RAM, swap).
+Espace d'informations partagé (entre processes).
+
+Création d'abstractions facilitant l'organisation des données :
+  - Le répertoire : un "contenant" de fichier(s) et/ou répertoire(s).
+  - Le fichier : une suite de données considérée comme une seule entité logique.
+  - Diverses métadonnées sur les fichiers ou répertoires : nom, taille, chemin d'accès, date
+    de création, date de modification, propriétaire, permissions, exécutables,...

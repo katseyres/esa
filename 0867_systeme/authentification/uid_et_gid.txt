@@ -1,0 +1,20 @@
+# UID et GID
+Stockage physique des informations d'authentification dans :
+  - /etc/passwd
+  - /etc/shadow
+  - /etc/group
+
+Fichiers consultables via un simple éditeur de texte.
+Le séparateur de champ est le double-point ":".
+Manpage disponible pour chacun.
+
+Ces 2 identifiants sont des entiers non signés (ayant une "vie" distincte l'un de l'autre) :
+  - UID = User IDentifier
+  - GID = Group IDentifier
+
+Par convention (variable selon les distributions) :
+  - 0 = root
+  - 1-999 = utilisateurs "système"
+  - 1000-65533 = utilisateurs "interactifs"
+  - 65534 = nobody
+

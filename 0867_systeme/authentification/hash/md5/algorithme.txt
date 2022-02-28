@@ -1,0 +1,27 @@
+# EXEMPLE : MD5
+
+Objectif : empreinte de 128 bits.
+
+# Étape 1
+Découpage du message en bloc de 512 bits. Sur le dernier (incomplet)
+  - ajout d'un bit par valeur
+  - puis autant de 0 requis pour atteindre une longueur de 448 bits
+  - sur les 64 bits restants, indication de la taille totale du message original (avant étape 1)
+
+# Étape 2
+Initialisation de 4 constantes de 32 bits et de 4 fonction prenant chacune 3 entrées de 32 bit
+et produisant un résultat de 32 bits.
+
+# Étape 3
+On découpe le premier bloc de 512 bits en 16 blocs de 32 bits, chacun de ceux-ci passera à
+la moulinette des 4 fonctions en utilisant les constantes pour les premières itérations.
+
+# Étape 4
+On reproduit cette séquence de 64 opérations successivement sur chaque bloc de 512 bits
+(mais les valeurs des constantes comportent une valeur qui découle des opérations faites
+sur le bloc précédent des 512 bits, chaque bloc est donc "lié" au précédent).
+
+# Étape 5
+La sortie finale de la fonction, l'empreinte, est déterminée par la concaténation des constantes
+ainsi calculés : 4 x 32 bits, soit une chaîne de 128 bits.
+ 

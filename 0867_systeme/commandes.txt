@@ -1,0 +1,38 @@
+ls : lister les éléments présents dans le répertoire
+
+kill -l : lister les différents processus qui peuvent être arretés.
+kill -s <signal_number> : tuer le signal avec le numéro mentionné.
+
+ps : décrit les informations des différents processus.
+ps -U <username> : liste l'ensemble des services qui tournent pour cet utilisateur. Si on tue le service -bash, ça détruit la session de l'utilisateur.
+
+top : affichage de tous les processus.
+
+/etc/login.defs : fichier des valeurs par défaut de tous les utilisateurs.
+
+adduser <name> : création d'un nouvel utilisateur.
+/etc/passwd : fichier où se trouve la liste des utilisateurs.
+/etc/shadow : fichier où se trouve les 
+
+chage -l <username> : liste l'ensemble des accès qui peuvent avoir une date de péremption.
+chage -d "2022-01-30" <username> : change la date de la dernière modification du mot de passe.
+
+tail -n <line_number> <file> : va chercher la ligne au numéro entré dans le fichier entré.
+
+shadowconfig off : retour au moment où les mots de passe se trouvaient dans /etc/passwd. 
+shadowconfig on : repasser au mode actuel où les mots de passe se trouvent dans /etc/shadow.
+man shadow : explique les champs de shadow.
+ 
+md4sum <file> : affiche le hash du fichier.
+sha1sum <file>
+sha256sum <file> : hash de 256 bits.
+sha512sum <file> : hash de 512 bits.
+
+su - : permet d'avoir le PATH de root comme /sbin.
+su - <username> : pas besoin de mettre de mot de passe pour passer à un utilisateur si on est connecté en tant que root (tous les droits).
+
+grep sudo /etc/group
+adduser <username> <group_name>
+visudo <file> : 
+
+sed -n '1, 10p' <file_name> : sélectionne le bloc de ligne souhaité (de 1 à 10 pour cette instruction).

@@ -1,0 +1,16 @@
+# Paramètres spéciaux
+
+Certains paramètres sont fournis par Bash.
+Ils peuvent seulement être référencés (consultés), non modifiés.
+On y accède en faisant précéder leur intitulé d'un dollar.
+
+N : (... où N est un chiffre) désigne un paramètre positionnel.
+* : la liste des paramètres positionnels.
+@ : la liste des paramètres positionnels.
+# : le nombre de paramètres positionnels.
+? : le statut de sortie de la commande de la dernière commande exécutée (0 = OK).
+- : l'ensemble des options du shell courant.
+$ : l'identifiant de processus (PID) du shell.
+! : l'identifiant de processus (PID) du job le plus récent placé en background.
+0 : le nom du shell ou du script.
+

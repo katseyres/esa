@@ -1,0 +1,1 @@
+Protocole NTP : la machine met à jour automatiquement l'heure et la date en récupérant les informations sur un serveur.

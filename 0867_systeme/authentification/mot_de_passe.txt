@@ -1,0 +1,9 @@
+# Renforcer le mot de passe
+Pas de "règles", mais bien des bonnes pratiques :
+  - Au moins 10 caractères
+  - Pas de noms
+  - Pas de mot complet
+  - Pas d'éléments personnels
+  - Diversification des caractères
+  - Un mot de passe différent par application (idéalement)
+  - Différences significatives lors d'une modification du mot de passe

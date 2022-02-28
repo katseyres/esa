@@ -1,0 +1,14 @@
+# Hash
+
+"Hash" = "Message digest" = "Fingerprint"
+
+Fonction de hachage destinée à produire une empreinte à partir d'un input.
+Le même input passé dans une même fonction de hachage produira la même empreinte.
+
+Au départ de l'empreinte, il n'est pas possible de calculer l'input (unidirectionnel).
+Un hash (une empreinte) permet de vérifier l'intégrité de l'input.
+
+L'input peut être n'importe quoi (chaîne de caractères; fichier,...) et peu importe la taille.
+La taille de l'empreinte est fixe et dépend de l'algorithme.
+
+Exemple: MD5 (128 bits), SHA-1 (160 bits), SHA-256 (256 bits), SHA-512 (512 bits).

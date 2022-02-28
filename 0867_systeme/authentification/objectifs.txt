@@ -1,0 +1,14 @@
+# Objectifs
+Identifier l'utilisateur
+  - interdire l'accès aux utilisateurs inconnus
+  - autoriser l'accès aux utilisateurs connus
+  - associer un "profil" à l'utilisateur afin de personnaliser son expérience
+
+La preuve de son identité est fournie via des références (credentials).
+
+Traditionnellement, on compte 3 facteurs d'authentification :
+  - Ce que l'on sait (mot de passe, PIN, ...)
+  - Ce que l'on a (smart card telle eID, token dont le code change régulièrement, ...)
+  - Ce que l'on est (empreinte digitale, iris, poids, ...)
+
+Pour augmenter la sécurité, l'authentification peut être multifactorielle.

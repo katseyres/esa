@@ -1,0 +1,16 @@
+# Architecture
+
+"Formater" une partition désigne la mise en place d'un FS pour structurer celle-ci.
+
+À l'instar de la table de partition qui se distingue de la partition elle-même, le FS comporte
+2 grandes parties :
+  - La structure de données du FS lui-même, laquelle concerne 2 perspectives :
+    - Ce qui touche à l'organisation général du FS (la taille de bloc, la liste des blocs libres,
+      les secteurs disque défectueux,...) : ex. le superbloc.
+    - Ce qui touche aux métadonnées individuelles de chaque fichier (nom, taille, adresses des
+      blocs contenant les données réelles du fichier,...) : ex. l'inode.
+  - Les données du contenu des fichiers eux-mêmes (la chaîne binaire d'une image encodée sous
+    format jpg par exemple).
+
+Les données destinées à l'organisation interne du FS occupent de la place et expliquent que
+l'espace disponible pour 

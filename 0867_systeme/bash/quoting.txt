@@ -1,0 +1,13 @@
+# Quoting
+
+Objectif: ôter une signification spéciale de certains termes.
+On informe Bash de ne pas interpréter un terme qui aurait pourtant du sens pour lui.
+
+Plusieurs paramètres permettent de réaliser ce quoting:
+  - Le caractère d'échappement (\) préserve la valeur littérale du caractère qui le suit
+    immédiatement.
+  - La paire de guillemets simples ('') préserve la valeur littérale de tous les caractères situés
+    entre eux. On parle aussi de "strong quotes".
+  - La paire de guillemets doubles ("") préserve la valeur littérale des caractères situés entre
+    eux, à l'exception de (\), ($), (`) et (!) lorsque l'expansion de l'historique est activée.
+    On parle aussi de "weak quotes".

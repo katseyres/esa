@@ -1,0 +1,40 @@
+# Structure des fichiers
+
+Exemple de ligne du fichier /etc/passwd :
+  - sj:x:1000:1000:Steve JOBS,0,(408) 974-2042,(650) 329-2100, ex Apple CEO:/home/sj:/bin/bash
+
+Description
+  - login    : sj
+  - password : x
+  - UID      : 1000
+  - GID      : 1000
+  - Données personnelles
+    - nom                   : Steve JOBS
+    - numéro du bureau      : 0
+    - téléphone du bureau   : (408) 974-2042
+    - téléphone maison      : (650) 329-2100
+    - Autre                 : ex Apple CEO
+  - espace personnel        : /home/sj
+  - interpréteur par défaut : /bin/bash
+
+Exemple de ligne du fichier /etc/group
+  - direction:x:1001:sj,tc,ec
+
+Description
+  - nom du groupe : direction
+  - password      : x
+  - GID           : 1001
+  - membres       : sj,tc,ec
+
+Exemple de ligne du fichier /etc/shadow
+sj:$6$...:16746:0:99999:7:::
+
+Description
+  - login      : sj
+  - hash       : $6$...
+  - age min    : 0
+  - age max    : 99999
+  - warning    : 7
+  - inactivité :
+  - expiration :
+  - reserved   :

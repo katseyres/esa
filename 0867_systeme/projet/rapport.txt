@@ -1,0 +1,8 @@
+
+Installation des packages
+  - PHP : apt-get install php
+  - Apache : apt-get install apache2
+  - apt install gnupg
+  - wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
+  - dpkg -i https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
+  - 

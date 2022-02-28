@@ -1,0 +1,17 @@
+# Considérations relatives à la sécurité
+
+L'output doit avoir une apparence aléatoire.
+Un petit changement de l'input doit complètement changer l'output.
+
+La probabilité de collision doit être faible
+  - Le nombre d'inputs étant infini
+  - Le nombre d'outputs étaint fini
+  - Ce qui veut dire que 2 inputs différents peuvent avoir une signature identique
+
+Distinguer l'algorithme de son implémentation (et leur vulnérabilités respectives)
+  - Une erreur de conception rend l'algorithme caduque : on ne peut pas changer la conception
+    sans modifier le standard que l'on s'attend à rencontrer (engendrant une incompatibilité)
+  - Une erreur d'implémentation (programmation de l'algorithme) peut être corrigée.
+
+D'une manière générale en sécurité, mieux vaut privilégier des outils open source et éprouvés
+par les chercheurs de sécurité.

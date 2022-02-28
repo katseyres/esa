@@ -1,0 +1,16 @@
+# Séquence des grandes étapes
+
+1. Lecture de l'input (terminal de l'utilisateu, chaîne de caractères en argument, fichier).
+
+2. Séparation de l'input en jetons (tokens). Quoting et alias sont gérés à cette étape.
+
+3. Analyse de ces jetons en commandes simples ou composées.
+
+4. Réalisation des diverses expansions.
+
+5. Réalisation des différentes redirections.
+
+6. Exécution de la commande.
+
+7. Optionnellement: attente de la fin de la commande et collecte de son statut de sortie.
+

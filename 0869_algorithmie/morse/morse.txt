@@ -1,0 +1,28 @@
+PROGRAMME conversion_morse
+
+dictionnaire_morse : DICTIONNAIRE(CARACTERE, CHAINE)
+index : ENTIER
+phrase, sortie : CHAINE
+lettre : CARACTERE
+
+DEBUT
+    dictionnaire_morse <- {"a": ".-", "b": "-...", (...), "8": "---..", "9": "----."}
+    index <- 0
+    ECRIRE("Entrer une phrase à convertir : ")
+    LIRE(phrase)
+    sortie <- ""
+
+    TANT QUE index < longueur(phrase) FAIRE
+        lettre <- phrase[index]
+
+        SI lettre_dans_dictionnaire(phrase[index]) = FAUX ALORS
+            ECRIRE("La lettre ne peut pas être convertie en morse.")
+            RETOURNE FAUX
+        FIN SI
+
+        sortie <- sortie + dictionnaire_morse[lettre] + " "
+        index <- index + 1
+    FIN TANT QUE
+
+    ECRIRE("Conversion réussie : ", sortie)
+FIN

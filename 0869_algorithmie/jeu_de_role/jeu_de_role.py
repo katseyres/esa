@@ -189,7 +189,7 @@ Choix : ")
         if (choice == 1):
             show_champions(champions)
         elif (choice == 2):
-            champions = add_champion()
+            champions = add_champion(champions)
         elif (choice == 3):
             champions = remove_champion(champions)
         elif (choice == 4):

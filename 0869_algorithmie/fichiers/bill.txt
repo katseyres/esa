@@ -1,0 +1,5 @@
+Vous avez commande 100 unites de l'article "pomme" au prix unitaire de 0.5 euros, ce qui revient a un prix total, pour l'article, de 60.5 euros (TVAC).
+Vous avez commande 54 unites de l'article "poire" au prix unitaire de 0.4 euros, ce qui revient a un prix total, pour l'article, de 26.14 euros (TVAC).
+Vous avez commande 71 unites de l'article "pêche" au prix unitaire de 0.65 euros, ce qui revient a un prix total, pour l'article, de 55.84 euros (TVAC).
+
+Le prix total de la facture s'eleve a 142.4775 euros.

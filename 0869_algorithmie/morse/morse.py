@@ -11,11 +11,10 @@ def morse_to_alpha():
     print("\n-- CONVERSION MORSE -> ALPHABET --\n")
     morse = input("Chaine morse : ")
 
-    filterDashes = morse.replace("-", "")
-    filterDots = filterDashes.replace(".", "")
+    my_filter = morse.replace("-", "").replace(".", "").replace(" ", "")
 
-    if len(filterDots) > 0:
-        print("\n[INFO] morse ne peut que contenir '-' and '.'")
+    if len(my_filter) > 0:
+        print("\n[INFO] morse ne peut que contenir '-', ' ', and '.'")
         return
 
     try:

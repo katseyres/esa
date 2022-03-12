@@ -1,0 +1,13 @@
+PROGRAMME getFactorialAddition
+    number, sum :  ENTIER
+
+    sum <-- 0
+
+    DEBUT
+        ECRIRE("Write a number: ")
+        LIRE(number)
+        TANT QUE number > 0
+            sum <-- sum + number
+            number <-- number - 1
+        FIN TANT QUE
+    FIN

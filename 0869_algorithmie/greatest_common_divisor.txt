@@ -1,0 +1,22 @@
+PROGRAMME greatestCommonDivisor
+    firstNumber, secondNumber, pgcd : ENTIER
+
+    DEBUT
+        ECRIRE("Write two numbers: ")
+        LIRE(firstNumber, secondNumber)
+
+        SI firstNumber > secondNumber
+            pgcd <-- secondNumber
+        SINON
+            pgcd <-- firstNumber
+        FIN SI
+
+        TANT QUE pgcd > 0 FAIRE
+            SI (firstNumber % pgcd == 0) ET (secondNumber % pgcd == 0)
+                BREAK
+            FIN SI
+            pgcd <-- pgcd - 1
+        FIN TANT QUE
+
+        ECRIRE(pgcd)
+    FIN

@@ -1,0 +1,20 @@
+PROGRAMME getInterval
+    firstNumber, secondNumber : ENTIER
+
+    DEBUT
+        ECRIRE("Write two numbers: ")
+        LIRE(firstNumber, secondNumber)
+
+        SI firstNumber > secondNumber
+            firstNumber, secondNumber <-- secondNumber, firstNumber
+        FIN SI
+
+        ECRIRE(firstNumber)
+
+        TANT QUE firstNumber < secondNumber FAIRE
+            firstNumber <-- firstNumber + 1
+            ECRIRE(firstNumber)
+        FIN TANT QUE
+        
+        ECRIRE(secondNumber)
+    FIN

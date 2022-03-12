@@ -1,0 +1,13 @@
+PROGRAMME getHigherToLower
+    firstNumber, secondNumber : ENTIER
+
+    DEBUT
+        ECRIRE("Enter two numbers : ")
+        LIRE(firstNumber, secondNumber)
+
+        SI firstNumber < secondNumber
+            firstNumber, secondNumber <-- secondNumber, firstNumber
+        FIN SI
+        
+        ECRIRE("Trié : ", firstNumber, secondNumber)
+    FIN

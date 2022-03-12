@@ -1,0 +1,22 @@
+PROGRAMME getHigherAndLower
+    firstNumber, secondNumber, thirdNumber : ENTIER
+
+    DEBUT
+        ECRIRE("Write three numbers : ")
+        LIRE(firstNumber, secondNumber, thirdNumber)
+
+        SI firstNumber < secondNumber
+            firstNumber, secondNumber <-- secondNumber, firstNumber
+        FIN SI
+        
+        SI firstNumber < thirdNumber
+            firstNumber, thirdNumber <-- thirdNumber, secondNumber
+        FIN SI
+
+        SI secondNumber < thirdNumber
+            secondNumber, thirdNumber <-- thirdNumber, secondNumber
+        FIN SI
+
+        ECRIRE("Plus grand : ", firstNumber)
+        ECRIRE("Plus petit : ", thirdNumber)
+    FIN

@@ -1,0 +1,15 @@
+PROGRAMME getAbsoluteNumber
+    number, resultNumber : ENTIER
+
+    DEBUT
+        ECRIRE("Enter an integer : ")
+        LIRE(intNumber)
+
+        SI intNumber >= 0
+            resultNumber <-- intNumber
+        SINON
+            resultNumber <-- -intNumber
+        FIN SI
+
+        ECRIRE("Valeur absolue : ", resultNumber)
+    FIN

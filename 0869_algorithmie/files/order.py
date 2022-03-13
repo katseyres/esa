@@ -1,4 +1,4 @@
-from compteur import FileService
+from count_letters import FileService
 
 DATA_PATH = "./data.csv"
 BILL_PATH = "./bill.txt"

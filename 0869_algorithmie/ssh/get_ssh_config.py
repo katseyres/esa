@@ -32,9 +32,28 @@ def ssh_hosts(file:str):
 
     return output
 
-# configs = ssh_config_template(PATH_TEMPLATE)
-# for config in configs:
-#     print(f"{config} {configs[config]}")
+def display_hosts(hosts):
+    return json.dumps(hosts, sort_keys=True, indent=4)
 
-hosts = ssh_hosts(PATH_HOSTS)
-print(json.dumps(hosts, sort_keys=True, indent=4))
+def get_hosts(hosts:list, param=""):
+    if param is "":
+        return hosts
+    if not dict(hosts[0]).__contains__(param):
+        return False
+    
+    return list(map(lambda x: x[param], hosts))
+
+def hosts_counter(hosts):
+    return len(hosts)
+
+def match_counter(needle:str, haystack:list):
+    check_pattern = list((needle in h for h in haystack))
+    return len(list(filter(lambda x: x is True, check_pattern)))
+
+if __name__ == "__main__":
+    hosts = ssh_hosts(PATH_HOSTS)
+
+    # print(hosts_counter(hosts))
+    # print(get_hosts(hosts, param="Host"))
+    # print(display_hosts(hosts))
+    # print(match_counter("etd-esa", list(map(lambda x: x["User"], hosts))))

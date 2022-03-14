@@ -1,0 +1,29 @@
+Host backup
+    HostName backup.esa.be
+    User etd-esa
+    ForwardAgent yes
+
+Host carto
+    HostName carto.esa.be
+    User andrenuyens
+    ForwardAgent yes
+
+Host pmstaging
+    HostName pm-staging.esa.be
+    User etd-esa
+    ForwardAgent yes
+
+Host migration
+    HostName migration.esa.be
+    User etd-esa
+    ForwardAgent yes
+
+Host preprod
+    HostName pre-prod.esa.be
+    User etd-esa
+    ForwardAgent yes
+
+Host test
+    HostName srv-test.esa.be
+    User etd-esa
+    ForwardAgent yes

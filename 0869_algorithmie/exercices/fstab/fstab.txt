@@ -1,0 +1,19 @@
+FONCTION lire_fichier(fichier:CHAINE)
+    DEBUT
+       read(fichier) # read est une fonction qui permet de lire le fichier
+    FIN
+
+
+FONCTION parametres_requis(contenu:CHAINE)
+    params: LISTE
+    index: ENTIER
+    DEBUT
+        split("<", contenu)[0] # split est une fonction qui permet de couper une chaîne
+        TANT QUE index < longueur(contenu)
+    FIN
+
+
+FONCTION verifie_ligne_commande
+    DEBUT
+
+    FIN

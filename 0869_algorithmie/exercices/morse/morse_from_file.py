@@ -2,13 +2,24 @@ CSV_PATH = "./morse_dictionary.csv"
 morse = {}
 
 def read_csv(file:str):
+    """
+        <file> is the file path which contains the morse code.
+        Return exception if corrupted file, otherwise content.
+    """
     output = {}
     
     with open(file, "r") as f:
         data = f.read().split("\n")
-        for letter in data:
-            output[letter.split(",")[0]] = letter.split(",")[1]
-    
+
+        for row in data:
+            translation =  row.split(",")
+
+            try:
+                output[translation[0]] = translation[1]
+            except IndexError:
+                # raise IndexError(f"corrupted file: \"{row}\"")
+                print(f"corrupted file: \"{row}\"")
+
     return output
 
 def show_morse_table(haystack:dict):
@@ -44,7 +55,11 @@ def alpha_to_morse(needle:str, haystack:dict):
 if __name__ == '__main__':
     CODE = "·─ ─···   "
 
-    morse =  read_csv(CSV_PATH)
+    try:
+        morse =  read_csv(CSV_PATH)
+    except IndexError as err:
+        print(err)
+    
     # print(show_morse_table(morse))
     # print(is_morse_code(CODE))
     # print(morse_to_alpha("-•-", morse))

@@ -49,74 +49,73 @@ def show_students():
             except:
                 print(f"- {field} : null")
 
-def add_student(auto_increment_id, fields):
-    print("\n-- CREATION ETUDIANT --")
+def check_information(fields):
+    if len(fields) != 3:
+        return False
 
-    new_student = {
-        "id": auto_increment_id
-    }
+    if type(fields[0]) != str or type(fields[1]) != str:
+        return False
 
-    for field in fields:
-        response = input(f"|-> {field} : ")        
-        new_student[field] = response
+    if len(fields[0]) <= 0 or len(fields[1]) <= 0:
+        return False
 
+    if type(fields[2]) != int:
+        return False
 
-    # try:
-    #     age = int(age)
-    # except:
-    #     print("\n[ERREUR] l'age doit etre un entier.")
-    #     return
-
-    # if (check_name(firstname) is False):
-    #     print("[ERREUR] prenom incorrect")
-    #     return False
+    if fields[2] <= 0 or fields[2] > 150:
+        return False
     
-    # if (check_name(lastname) is False):
-    #     print("[ERREUR] nom incorrect")
-    #     return False
+    return True
 
-    # if (check_age(age) is False):
-    #     print("[ERREUR] age incorrect")
-    #     return False
-
-    dico_etudiant.append(new_student)
-
-    print("Etudiant ajoute")
-    return auto_increment_id + 1
-
-def remove_student():
-    print("\n-- SUPPRESSION --")
-
-    show_students()
-
-    print("\n(NB : entrer 'Q' pour annuler)")
-
-    response = input("\nRetirer quel etudiant [id] : ")
+def add_student(auto_increment_id, fields:list):
+    if type(auto_increment_id) != int:
+        return None
     
-    if (response == 'Q'):
-        return True
+    if auto_increment_id < 0:
+        return None
     
-    try:
-        print(int(response))
-    except:
-        print("\n[ERREUR] l'identifiant doit etre un entier")
-        return
+    if check_information(fields) is False:
+        return None
+    
+    student = { "id": auto_increment_id }      
+    student["firstname"] = fields[0]
+    student["lastname"] = fields[1]
+    student["age"] = int(fields[2])
 
-    response = int(response)
+    return student
 
+def is_student(student:dict):
+    if type(student['id']) != int:
+        return False
+    
+    if student['id'] < 0:
+        return False
+    
+    student.pop('id')
+
+    if check_information(list(student.values)) is False:
+        return False
+    
+    return True
+
+def remove_student(id, students:list):
+    if type(id) != int or type(students) != list:
+        return False
+
+    for s in students:
+        if is_student is False:
+            return False
+    
     index = -1
 
-    for student in dico_etudiant:
-        if (student["id"] == response):
-            index = dico_etudiant.index(student)
-            break
+    for s in students:
+        if (s["id"] == id):
+            index = students.index(student)
+            students.pop(index)
+            return students
+            
+    return False
     
-    if index == -1:
-        print("\n[INFO] aucun etudiant avec cet identifiant")
-        return
-
-    dico_etudiant.pop(index)
-    print("\n[INFO] etudiant supprime")
 
 def add_field(fields:list) -> list:
     print("\n--- AJOUTER UN CHAMP ---\n")
@@ -240,11 +239,25 @@ if __name__ == '__main__':
         if choice == 1:
             show_students()
         elif choice == 2:
-            auto_increment_id = add_student(auto_increment_id, fields)
+            print("\n-- CREATION ETUDIANT --")
+            response = input('<firstname> <lastname> <age>\n >> ')
+
+            if (len(response) != 3):
+                print("wrong cmdline")
+                continue
+
+            student = add_student(auto_increment_id, response)
+            if student:
+                students.append(student)
+                auto_increment_id += 1
         elif choice == 3:
-            remove_student()
+            print("\n-- SUPPRESSION --")
+            show_students()
+            print("\n(NB : entrer 'Q' pour annuler)")
+            response = input("\nRetirer quel etudiant [id] : ")
+            students = remove_student(response, students)
         elif choice == 4:
-            dico_etudiants = edit_student(dico_etudiant, fields)
+            students = edit_student(dico_etudiant, fields)
         elif choice == 5:
             fields = add_field(fields)
         elif choice == 6:
